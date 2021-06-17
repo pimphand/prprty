@@ -11,6 +11,7 @@ class Property extends Model
     use HasFactory, SoftDeletes;
 
     protected $guarded = ['id'];
+    protected $with = ['category'];
 
     public function category()
     {
@@ -20,5 +21,10 @@ class Property extends Model
     public function image()
     {
         return $this->hasOne(PropertyImage::class, 'property_id', 'id');
+    }
+
+    public function product()
+    {
+        return $this->belongsTo(FeaturedProduct::class, 'id', 'property_id');
     }
 }

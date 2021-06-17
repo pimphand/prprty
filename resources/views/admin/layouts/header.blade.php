@@ -17,122 +17,42 @@
 
         <ul class="list-inline float-right mb-0 mr-3">
             <!-- language-->
-            <li class="list-inline-item dropdown notification-list">
+            {{-- <li class="list-inline-item dropdown notification-list">
                 <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#"
                     role="button" aria-haspopup="false" aria-expanded="false">
                     <i class="ti-email noti-icon"></i>
-                    <span class="badge badge-danger heartbit noti-icon-badge">5</span>
+                    @if (App\Models\Message::where('status', 0)->get())
+                        <span class="badge badge-danger heartbit  a-animate-blink  noti-icon-badge">
+                            {{ App\Models\Message::where('status', 0)->count() }}
+                        </span>
+                    @else
+                        <span class="badge badge-danger heartbit">
+                        </span>
+                    @endif
                 </a>
+
                 <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg">
                     <!-- item-->
                     <div class="dropdown-item noti-title align-self-center">
-                        <h5>
-                            <span class="badge badge-danger float-right">745</span>Messages
-                        </h5>
+                        @if (count(App\Models\Message::where('status', 0)->get()))
+                            <h5>
+                                <span class="badge badge-danger float-right">Anda Memiliki
+                                    {{ App\Models\Message::where('status', 0)->count() }} pesan belum di
+                                    baca</span>
+                            </h5>
+
+                        @else
+                            <h5>
+                                <span class="badge badge-danger float-right">Belum ada pesan
+                            </h5>
+                        @endif
                     </div>
-
-                    <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <div class="notify-icon">
-                            <img src="{{ asset('backend') }}/assets/images/users/avatar-2.jpg" alt="user-img"
-                                class="img-fluid rounded-circle" />
-                        </div>
-                        <p class="notify-details">
-                            <b>Charles M. Jones</b>
-                            <small class="text-muted">Dummy text of the printing and typesetting
-                                industry.</small>
-                        </p>
+                        Lihat semua pesan
                     </a>
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <div class="notify-icon">
-                            <img src="{{ asset('backend') }}/assets/images/users/avatar-3.jpg" alt="user-img"
-                                class="img-fluid rounded-circle" />
-                        </div>
-                        <p class="notify-details">
-                            <b>Thomas J. Mimms</b>
-                            <small class="text-muted">You have 87 unread messages</small>
-                        </p>
-                    </a>
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <div class="notify-icon">
-                            <img src="{{ asset('backend') }}/assets/images/users/avatar-4.jpg" alt="user-img"
-                                class="img-fluid rounded-circle" />
-                        </div>
-                        <p class="notify-details">
-                            <b>Luis M. Konrad</b>
-                            <small class="text-muted">It is a long established fact that a reader
-                                will</small>
-                        </p>
-                    </a>
-
-                    <!-- All-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        View All
-                    </a>
-
                 </div>
-            </li>
 
-            <li class="list-inline-item dropdown notification-list">
-                <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#"
-                    role="button" aria-haspopup="false" aria-expanded="false">
-                    <i class="ti-bell noti-icon"></i>
-                    <span class="badge badge-success a-animate-blink noti-icon-badge">3</span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg">
-                    <!-- item-->
-                    <div class="dropdown-item noti-title">
-                        <h5>
-                            <span class="badge badge-danger float-right">87</span>Notification
-                        </h5>
-                    </div>
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <div class="notify-icon bg-primary">
-                            <i class="mdi mdi-cart-outline"></i>
-                        </div>
-                        <p class="notify-details">
-                            <b>Your order is placed</b>
-                            <small class="text-muted">Dummy text of the printing and typesetting
-                                industry.</small>
-                        </p>
-                    </a>
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <div class="notify-icon bg-success">
-                            <i class="mdi mdi-message"></i>
-                        </div>
-                        <p class="notify-details">
-                            <b>New Message received</b>
-                            <small class="text-muted">You have 87 unread messages</small>
-                        </p>
-                    </a>
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <div class="notify-icon bg-warning">
-                            <i class="mdi mdi-martini"></i>
-                        </div>
-                        <p class="notify-details">
-                            <b>Your item is shipped</b>
-                            <small class="text-muted">It is a long established fact that a reader
-                                will</small>
-                        </p>
-                    </a>
-
-                    <!-- All-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        View All
-                    </a>
-
-                </div>
-            </li>
+            </li> --}}
 
             <li class="list-inline-item dropdown notification-list">
                 <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown" href="#"
@@ -143,9 +63,9 @@
                 <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                     <!-- item-->
                     <div class="dropdown-item noti-title">
-                        <h5>Welcome</h5>
+                        <h5>{{ Auth::user()->name }}</h5>
                     </div>
-                    <a class="dropdown-item" href="#">
+                    {{-- <a class="dropdown-item" href="#">
                         <i class="mdi mdi-account-circle m-r-5 text-muted"></i> Profile</a>
                     <a class="dropdown-item" href="#">
                         <i class="mdi mdi-wallet m-r-5 text-muted"></i> My Wallet</a>
@@ -154,9 +74,16 @@
                         <i class="mdi mdi-settings m-r-5 text-muted"></i> Settings</a>
                     <a class="dropdown-item" href="#">
                         <i class="mdi mdi-lock-open-outline m-r-5 text-muted"></i> Lock screen</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">
-                        <i class="mdi mdi-logout m-r-5 text-muted"></i> Logout</a>
+                    <div class="dropdown-divider"></div> --}}
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <span class="dropdown-item">
+                            <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault();
+                                            this.closest('form').submit();">
+                                <i class="mdi mdi-logout m-r-5 text-muted"></i>Keluar
+                            </x-responsive-nav-link>
+                        </span>
+                    </form>
                 </div>
             </li>
         </ul>

@@ -71,8 +71,7 @@
                                                                     <label for="field-7"
                                                                         class="control-label">Deskripsi</label>
                                                                     <br>
-                                                                    <textarea id="elm1" required
-                                                                        name="description"></textarea>
+                                                                    <textarea id="elm1" name="description"></textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -168,7 +167,7 @@
                                                                             <label for="field-3"
                                                                                 class="control-label">Gambar</label>
                                                                             <input type="file" class="form-control"
-                                                                                id="field-3" placeholder="Address"
+                                                                                id="field-3" name="image"
                                                                                 value="{{ $item->image }}">
                                                                         </div>
                                                                     </div>

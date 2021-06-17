@@ -50,21 +50,26 @@
 
                  <li class="has_sub">
                      <a href="{{ route('news.index') }}" class="waves-effect">
-                         <i class="mdi mdi-map-marker-multiple"></i>
+                         <i class="mdi mdi-newspaper"></i>
                          <span> List Berita </span>
                      </a>
                  </li>
 
+                 <li class="menu-title">Settings</li>
+
                  <li class="has_sub">
-                     <a href="javascript:void(0);" class="waves-effect">
-                         <i class="mdi mdi-layers"></i>
-                         <span> Pages </span>
-                         <span class="float-right">
-                             <i class="mdi mdi-chevron-right"></i>
-                         </span>
+                     <a href="{{ route('slider.index') }}" class="waves-effect">
+                         <i class="mdi mdi-folder-multiple-image"></i>
+                         <span> Slider </span>
                      </a>
                  </li>
 
+                 <li class="has_sub">
+                     <a href="{{ route('product.index') }}" class="waves-effect">
+                         <i class="mdi mdi-cart"></i>
+                         <span>Produk Ungulan</span>
+                     </a>
+                 </li>
              </ul>
          </div>
          <div class="clearfix"></div>

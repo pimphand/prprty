@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Message;
 use App\Models\News;
 use App\Models\Property;
 use App\Models\SocialMedia;
@@ -11,15 +12,15 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $sos = SocialMedia::all();
-        $sosial = SocialMedia::count();
+        $nv = News::sum('views') + Property::sum('views');
         $prop = Property::count();
         $news = News::count();
+        $message = Message::latest()->limit(5)->get();
         return view('admin.dashboard')->with([
-            'sos' => $sos,
-            'sosial' => $sosial,
             'prop' => $prop,
+            'view' => $nv,
             'berita' => $news,
+            'message' => $message
         ]);
     }
 

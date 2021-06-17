@@ -78,6 +78,8 @@
     <script src="{{ asset('backend') }}/assets/js/jquery.nicescroll.js"></script>
     <script src="{{ asset('backend') }}/assets/js/jquery.scrollTo.min.js"></script>
 
+
+
     @yield('script')
     <!-- App js -->
     <script src="{{ asset('backend') }}/assets/js/app.js"></script>

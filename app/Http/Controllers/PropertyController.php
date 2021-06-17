@@ -49,11 +49,23 @@ class PropertyController extends Controller
             FileController::image($request->file("image"), $imageName, $property->image);
             $property->image = $imageName;
         }
-        $property->category_id = $request->kategori;
+        $property->category_id = $request->category_id;
         $property->name = $request->name;
         $property->description = $request->description;
-        // $property->maps = $request->;
+        $property->maps = $request->maps;
         $property->price = $request->price;
+        $property->address = $request->address;
+        $property->city = $request->city;
+        $property->province = $request->province;
+        $property->zip = $request->zip;
+        $property->bedrooms = $request->bedrooms;
+        $property->area = $request->area;
+        $property->longi = $request->longi;
+        $property->langi = $request->langi;
+        $property->bathrooms = $request->bathrooms;
+        $property->garages = $request->garages;
+        // $property->feature = $request->feature;
+
         $property->save();
 
         return redirect()->back();
@@ -91,17 +103,26 @@ class PropertyController extends Controller
     public function update(Request $request, $id)
     {
         $property = Property::find($id);
-        $property->property_id = $property->id;
         if ($request->hasFile("image")) {
             $imageName = Str::uuid();
             FileController::image($request->file("image"), $imageName, $property->image);
             $property->image = $imageName;
         }
-        $property->category_id = $request->kategori;
+        $property->category_id = $request->category_id;
         $property->name = $request->name;
         $property->description = $request->description;
-        // $property->maps = $request->;
+        $property->maps = $request->maps;
         $property->price = $request->price;
+        $property->address = $request->address;
+        $property->city = $request->city;
+        $property->province = $request->province;
+        $property->zip = $request->zip;
+        $property->bedrooms = $request->bedrooms;
+        $property->longi = $request->longi;
+        $property->area = $request->langi;
+        $property->area = $request->area;
+        $property->bathrooms = $request->bathrooms;
+        $property->garages = $request->garages;
         $property->save();
 
         return redirect()->back();

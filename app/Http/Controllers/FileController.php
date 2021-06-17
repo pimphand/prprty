@@ -38,4 +38,12 @@ class FileController extends Controller
         }
         Storage::putFileAs("public/news", $image, $name);
     }
+
+    public static function slider($image, $name, $oldName = null): void
+    {
+        if ($oldName) {
+            Storage::delete('public/slider/' . $oldName);
+        }
+        Storage::putFileAs("public/slider", $image, $name);
+    }
 }

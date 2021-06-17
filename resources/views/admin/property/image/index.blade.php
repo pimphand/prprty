@@ -23,10 +23,11 @@
                     <div class="col-md-6 col-xl-3">
                         <div class="card bg-white m-b-30">
                             <div class="card-body ">
-                                <h5 class="header-title">{{ $item->name }}</h5>
+                                <h6 class="header-title">Kategori: {{ $item->category->name }}</h6>
+                                <h6 class="header-title">Propreti: {{ $item->name }}</h6>
                                 <a href="{{ route('image.edit', ['image' => $item->id]) }}">
                                     <button type="button" class="btn btn-raised btn-primary">
-                                        edit
+                                        Details
                                     </button>
                                 </a>
                                 <button type="button" class="btn btn-raised btn-danger" data-toggle="modal"

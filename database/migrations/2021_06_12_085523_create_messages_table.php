@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePropertyCategoriesTable extends Migration
+class CreateMessagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreatePropertyCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('property_categories', function (Blueprint $table) {
+        Schema::create('messages', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('email');
+            $table->string('subject');
+            $table->string('message');
             $table->boolean('status')->nullable()->default(false);
             $table->timestamps();
         });
@@ -28,6 +31,6 @@ class CreatePropertyCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('property_categories');
+        Schema::dropIfExists('messages');
     }
 }

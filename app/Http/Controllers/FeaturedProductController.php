@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FeaturedProduct;
 use App\Models\Property;
-use App\Models\PropertyCategory;
 use Illuminate\Http\Request;
 
-class PropertyCategoryController extends Controller
+class FeaturedProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class PropertyCategoryController extends Controller
      */
     public function index()
     {
-        $data['kategori'] = PropertyCategory::all();
-        // dd($data);
-        return view('admin.property.category.index', $data);
+        $data['product'] = FeaturedProduct::all();
+        $data['property'] = Property::all();
+        return view('admin.settings.product', $data);
     }
 
     /**
@@ -38,24 +38,20 @@ class PropertyCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name' => 'string',
-        ]);
-        $category = new PropertyCategory();
-        $category->name = $request->name;
-        $category->status = 1;
-        $category->save();
-
+        $product = new FeaturedProduct();
+        $product->property_id = $request->property;
+        $product->status = $request->status;
+        $product->save();
         return redirect()->back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\PropertyCategory  $propertyCategory
+     * @param  \App\Models\FeaturedProduct  $featuredProduct
      * @return \Illuminate\Http\Response
      */
-    public function show(PropertyCategory $propertyCategory)
+    public function show(FeaturedProduct $featuredProduct)
     {
         //
     }
@@ -63,10 +59,10 @@ class PropertyCategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\PropertyCategory  $propertyCategory
+     * @param  \App\Models\FeaturedProduct  $featuredProduct
      * @return \Illuminate\Http\Response
      */
-    public function edit(PropertyCategory $propertyCategory)
+    public function edit(FeaturedProduct $featuredProduct)
     {
         //
     }
@@ -75,34 +71,28 @@ class PropertyCategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PropertyCategory  $propertyCategory
+     * @param  \App\Models\FeaturedProduct  $featuredProduct
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'name' => 'string',
-        ]);
-        $category = PropertyCategory::find($id);
-        $category->name = $request->name;
-        $category->status = 1;
-        $category->save();
-
+        $product = FeaturedProduct::find($id);
+        $product->property_id = $request->property;
+        $product->status = $request->status;
+        $product->save();
         return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\PropertyCategory  $propertyCategory
+     * @param  \App\Models\FeaturedProduct  $featuredProduct
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $category = PropertyCategory::find($id);
-        $category->status = 0;
-        $category->save();
-
+        $product = FeaturedProduct::find($id);
+        $product->delete();
         return redirect()->back();
     }
 }

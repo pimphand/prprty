@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Property;
-use App\Models\PropertyCategory;
+use App\Models\Message;
 use Illuminate\Http\Request;
 
-class PropertyCategoryController extends Controller
+class MessageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,7 @@ class PropertyCategoryController extends Controller
      */
     public function index()
     {
-        $data['kategori'] = PropertyCategory::all();
-        // dd($data);
-        return view('admin.property.category.index', $data);
+        //
     }
 
     /**
@@ -39,12 +36,19 @@ class PropertyCategoryController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'string',
+            "name" => "required|string",
+            "email" => "required|string|email",
+            "subject" => "required|string",
+            "message" => "required|string",
         ]);
-        $category = new PropertyCategory();
-        $category->name = $request->name;
-        $category->status = 1;
-        $category->save();
+
+        $message = new Message();
+        $message->name = $request->name;
+        $message->email = $request->email;
+        $message->subject = $request->subject;
+        $message->message = $request->message;
+        $message->status = 1;
+        $message->save;
 
         return redirect()->back();
     }
@@ -52,10 +56,10 @@ class PropertyCategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\PropertyCategory  $propertyCategory
+     * @param  \App\Models\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function show(PropertyCategory $propertyCategory)
+    public function show(Message $message)
     {
         //
     }
@@ -63,10 +67,10 @@ class PropertyCategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\PropertyCategory  $propertyCategory
+     * @param  \App\Models\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function edit(PropertyCategory $propertyCategory)
+    public function edit(Message $message)
     {
         //
     }
@@ -75,34 +79,32 @@ class PropertyCategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PropertyCategory  $propertyCategory
+     * @param  \App\Models\Message  $message
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'name' => 'string',
-        ]);
-        $category = PropertyCategory::find($id);
-        $category->name = $request->name;
-        $category->status = 1;
-        $category->save();
-
-        return redirect()->back();
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\PropertyCategory  $propertyCategory
+     * @param  \App\Models\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Message $message)
     {
-        $category = PropertyCategory::find($id);
-        $category->status = 0;
-        $category->save();
+        //
+    }
 
-        return redirect()->back();
+    public function setStatus($id)
+    {
+        $me = Message::find($id);
+        $me->status = 0;
+        // dd($message);
+        $me->save;
+
+        return redirect(route('dashboard'));
     }
 }

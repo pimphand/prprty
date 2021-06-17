@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\News;
+use App\Models\Slider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
-class NewsController extends Controller
+class SliderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,8 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $data['news'] = News::all();
-        return view('admin.new.index', $data);
+        $slider['slider'] = Slider::all();
+        return view('admin.settings.slider', $slider);
     }
 
     /**
@@ -37,26 +38,25 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        $news = new News();
-        $news->description = $request->description;
-        $news->status = $request->status;
-        $news->title = $request->title;
+        $slider = new Slider();
         if ($request->hasFile("image")) {
             $imageName = Str::uuid();
-            FileController::news($request->file("image"), $imageName, $news->image);
-            $news->image = $imageName;
+            FileController::slider($request->file("image"), $imageName, $slider->image);
+            $slider->image = $imageName;
         }
-        $news->save();
+        $slider->status = $request->status;
+        $slider->save();
+
         return redirect()->back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\News  $news
+     * @param  \App\Models\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function show(News $news)
+    public function show(Slider $slider)
     {
         //
     }
@@ -64,10 +64,10 @@ class NewsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\News  $news
+     * @param  \App\Models\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function edit(News $news)
+    public function edit(Slider $slider)
     {
         //
     }
@@ -76,45 +76,35 @@ class NewsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\News  $news
+     * @param  \App\Models\Slider  $slider
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $news = News::findOrFail($id);
-        $news->description = $request->description;
-        $news->status = $request->status;
-        $news->title = $request->title;
+        $slider = Slider::find($id);
+        $slider->status = $request->status;
         if ($request->hasFile("image")) {
             $imageName = Str::uuid();
-            FileController::news($request->file("image"), $imageName, $news->image);
-            $news->image = $imageName;
+            FileController::slider($request->file("image"), $imageName, $slider->image);
+            $slider->image = $imageName;
         }
-        $news->save();
+        // dd($slider);
+        $slider->save();
+
         return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\News  $news
+     * @param  \App\Models\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function destroy(News $news)
+    public function destroy($id)
     {
-        //
-    }
-
-    public function setstatus(Request $request, $id)
-    {
-        $request->validate([
-            'status' => 'required|in:0,1'
-        ]);
-
-        $item = News::findOrFail($id);
-        $item->status = $request->status;
-        $item->save();
-
+        $sliderImage = Slider::find($id);
+        Slider::destroy($id);
+        Storage::delete('public/slider/' . $sliderImage->image);
         return redirect()->back();
     }
 }

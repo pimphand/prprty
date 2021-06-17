@@ -181,7 +181,7 @@ $(document).ready(function($) {
                 "id": $(this._icon).find(".ts-marker").attr("data-ts-id"),
                 "parentMarker": marker,
                 "i": i,
-                "url": "assets/db/items.json"
+                "url": "frontend/assets/db/items.json"
             });
         });
 
@@ -454,7 +454,7 @@ $(document).ready(function($) {
         ( controls === 1 ) ? L.control.zoom({position: "topright"}).addTo(map) : "";
 
         var icon = L.icon({
-            iconUrl: "assets/img/marker-small.png",
+            iconUrl: "frontend/assets/img/marker-small.png",
             iconSize: [22, 29],
             iconAnchor: [11, 29]
         });

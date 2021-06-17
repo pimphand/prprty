@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePropertyCategoriesTable extends Migration
+class CreateFeaturedProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreatePropertyCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('property_categories', function (Blueprint $table) {
+        Schema::create('featured_products', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->integer('property_id');
             $table->boolean('status')->nullable()->default(false);
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ class CreatePropertyCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('property_categories');
+        Schema::dropIfExists('featured_products');
     }
 }
