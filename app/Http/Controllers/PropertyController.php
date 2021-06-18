@@ -49,6 +49,7 @@ class PropertyController extends Controller
             FileController::image($request->file("image"), $imageName, $property->image);
             $property->image = $imageName;
         }
+        $property->code = 'PROP' . mt_rand(1000, 9999) . mt_rand(100, 999);
         $property->category_id = $request->category_id;
         $property->name = $request->name;
         $property->description = $request->description;

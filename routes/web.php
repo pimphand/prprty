@@ -29,7 +29,7 @@ Route::get('/berita', [FrontendController::class, 'news'])->name('news');
 Route::get('/berita/{id}', [FrontendController::class, 'newsdetail'])->name('news.detail');
 Route::get('/property', [FrontendController::class, 'propety'])->name('propety');
 Route::post('/property', [FrontendController::class, 'cari'])->name('propety.s');
-Route::get('/propety/{id}', [FrontendController::class, 'details'])->name('details.proprety');
+Route::get('/property/{id}', [FrontendController::class, 'details'])->name('details.proprety');
 Route::any('/search/proprety', [FrontendController::class, 'search'])->name('search');
 Route::get('/about', [FrontendController::class, 'about'])->name('about');
 Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');

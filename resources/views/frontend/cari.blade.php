@@ -14,7 +14,7 @@
     </section>
 
     <!--PAGE TITLE
-                                                                                                                                                                                                                                =========================================================================================================-->
+                                                                                                                                                                                                                                                =========================================================================================================-->
     <section id="page-title">
         <div class="container">
 
@@ -34,7 +34,7 @@
                 @csrf
                 <section class="ts-box p-0">
                     <!--PRIMARY SEARCH INPUTS
-                                                                                                                                                                                                                                                                                                                =========================================================================================-->
+                                                                                                                                                                                                                                                                                                                                =========================================================================================-->
                     <div class="form-row px-4 py-3">
 
                         <!--Keyword-->
@@ -53,7 +53,7 @@
                     <!--end form-row-->
 
                     <!--MORE OPTIONS - ADVANCED SEARCH
-                                                                                                                                                                                                                                                                                                                =========================================================================================-->
+                                                                                                                                                                                                                                                                                                                                =========================================================================================-->
                     {{-- <div class="ts-bg-light px-4 py-2 border-top">
 
                         <!--More Options Button-->
@@ -200,7 +200,7 @@
     <!--end #search-form-->
 
     <!--DISPLAY CONTROL
-                                                                                                                                                                                                                        =========================================================================================================-->
+                                                                                                                                                                                                                                        =========================================================================================================-->
     <section id="items-grid">
         <div class="container">
 
@@ -217,8 +217,10 @@
                                 <i class="fa fa-thumbs-up"></i>
                             </div>
 
+
                             <!--Card Image-->
-                            <a href="detail-01.html" class="card-img ts-item__image"
+                            <a href="{{ asset('storage/image/' . $item->image) }}"
+                                class="ts-zoom popup-image card-img ts-item__image"
                                 data-bg-image="{{ asset('storage/image/' . $item->image) }}">
                                 <div class="ts-item__info-badge">
                                     Rp. {{ $item->price }}
@@ -240,11 +242,11 @@
                                         <dd>{{ $item->area }}<sup>2</sup></dd>
                                     </dl>
                                     <dl>
-                                        <dt>Bedrooms</dt>
+                                        <dt>Kamar Tidur</dt>
                                         <dd>{{ $item->bedrooms }}</dd>
                                     </dl>
                                     <dl>
-                                        <dt>Bathrooms</dt>
+                                        <dt>kamar Mandi</dt>
                                         <dd>{{ $item->bathrooms }}</dd>
                                     </dl>
                                 </div>
@@ -267,7 +269,7 @@
     </section>
 
     <!--PAGINATION
-                                                                                                                                                                                                                        =========================================================================================================-->
+                                                                                                                                                                                                                                        =========================================================================================================-->
     <section id="pagination">
         <div class="container">
 

@@ -9,9 +9,9 @@
         <div class="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Library</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('propety') }}">Properti</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Detail Properti</li>
                 </ol>
                 <!--end breadcrumb-->
             </nav>
@@ -40,7 +40,7 @@
     </section>
 
     <!--PAGE TITLE
-                                                                                                                                                                                =========================================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                =========================================================================================================-->
     <section id="page-title" class="border-bottom ts-white-gradient">
         <div class="container">
 
@@ -67,20 +67,20 @@
     </section>
 
     <!--CONTENT
-                                                                                                                                                                                =========================================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                =========================================================================================================-->
     <section id="content">
         <div class="container">
             <div class="row flex-wrap-reverse">
 
                 <!--LEFT SIDE
-                                                                                                                                                                                            =============================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            =============================================================================================-->
                 <div class="col-md-5 col-lg-4">
 
                     <!--DETAILS
-                                                                                                                                                                                                =========================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                =========================================================================================-->
                     <section id="location">
 
-                        <h3>Location</h3>
+                        <h3>Lokasi</h3>
 
                         <div class="ts-box p-0">
                             <div class="ts-map ts-map__detail" id="ts-map-simple"
@@ -90,8 +90,7 @@
                                 data-ts-map-controls="0"></div>
                             <div class="p-3 ts-text-color-light">
                                 <a href="{{ $prop->maps }}"><i class="fa fa-map-marker mr-2"></i>
-                                    1496 Apple Lane
-                                    San Jose, IL 62682
+                                    {{ $prop->city }}, {{ $prop->province }}
                                 </a>
                             </div>
                         </div>
@@ -99,9 +98,9 @@
                     </section>
 
                     <!--CONTACT THE AGENT
-                                                                                                                                                                                                =========================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                =========================================================================================-->
                     <section class="contact-the-agent">
-                        <h3>Contact the Agent</h3>
+                        <h3>Kontak Agent</h3>
 
                         <div class="ts-box">
 
@@ -114,39 +113,40 @@
 
                                 <!--Phone contact-->
                                 <figure class="mb-0">
-                                    <h5 class="mb-0">Jane Brown</h5>
+                                    <h5 class="mb-0">Admin</h5>
                                     <p class="mb-0">
                                         <i class="fa fa-phone-square ts-opacity__50 mr-2"></i>
-                                        +1 602-862-1673
+                                        +62 899-0466-363
                                     </p>
                                 </figure>
                             </div>
 
                             <!--Agent contact form-->
-                            <form id="form-agent" class="ts-form">
+                            <form>
 
                                 <!--Name-->
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
+                                    <input type="text" id="wa_nama" class="form-control" name="name"
+                                        placeholder="Masukan Nama" required>
                                 </div>
 
                                 <!--Email-->
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <input type="email" class="form-control" id="email" name="email"
                                         placeholder="Your Email">
-                                </div>
+                                </div> --}}
 
                                 <!--Message-->
                                 <div class="form-group">
-                                    <textarea class="form-control" id="form-contact-message" rows="3" name="message"
-                                        placeholder="Hi, I want to have more information about property #156461"></textarea>
+                                    <textarea class="form-control" id="wa_bongkar" rows="3"
+                                        name="message">Saya tertarik dengan Properti dengan kode {{ $prop->code }}</textarea>
                                 </div>
 
                                 <!--Submit button-->
                                 <div class="form-group clearfix mb-0">
-                                    <button type="submit" class="btn btn-primary float-right" id="form-contact-submit">Send
-                                        a Message
-                                    </button>
+                                    <a class="tmblpesan" href="javascript:void"><button type="submit"
+                                            class="btn btn-primary float-right">Kirim Pesan
+                                        </button></a>
                                 </div>
 
                             </form>
@@ -155,7 +155,7 @@
                     </section>
 
                     <!--ACTIONS
-                                                                                                                                                                                            =============================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            =============================================================================================-->
                     <section id="actions">
 
                         <div class="d-flex justify-content-between">
@@ -188,11 +188,11 @@
                 <!--end col-md-4-->
 
                 <!--RIGHT SIDE
-                                                                                                                                                                                            =============================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            =============================================================================================-->
                 <div class="col-md-7 col-lg-8">
 
                     <!--DESCRIPTION
-                                                                                                                                                                                                =========================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                =========================================================================================-->
                     <section id="description">
 
                         <h3>Deskripsi</h3>
@@ -204,7 +204,7 @@
                         <dl class="ts-description-list__line mb-0 ts-column-count-2">
 
                             <dt>ID:</dt>
-                            <dd class="border-bottom pb-2">{{ $prop->code }}#adfasd</dd>
+                            <dd class="border-bottom pb-2">#{{ $prop->code }}</dd>
 
                             <dt>Category:</dt>
                             <dd class="border-bottom pb-2">{{ $prop->category->name }}</dd>
@@ -232,34 +232,27 @@
                     </section>
 
                     <!--FLOOR PLANS
-                                                                                                                                                                                                =========================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                =========================================================================================-->
                     <section id="floor-plans">
 
-                        <h3>Floor Plans</h3>
+                        <h3>Gambar Rumah</h3>
 
                         <!--1st Floor-->
                         <a href="#collapse-floor-1" class="ts-box d-block mb-2 py-3" data-toggle="collapse" role="button"
                             aria-expanded="true" aria-controls="collapse-floor-1">
-                            1st Floor
+                            Foto
                             <div class="collapse show" id="collapse-floor-1">
-                                <img src="{{ asset('frontend') }}/assets/img/img-floor-plan-01.jpg" alt="" class="w-100">
+                                <img src="{{ asset('storage/image/' . $prop->image) }}" alt="" class="w-100">
                             </div>
                         </a>
 
                         <!--2nd Floor-->
-                        <a href="#collapse-floor-2" class="ts-box d-block py-3" data-toggle="collapse" role="button"
-                            aria-expanded="false" aria-controls="collapse-floor-2">
-                            2nd Floor
-                            <div class="collapse" id="collapse-floor-2">
-                                <img src="{{ asset('frontend') }}/assets/img/img-floor-plan-02.jpg" alt="" class="w-100">
-                            </div>
-                        </a>
 
                     </section>
 
                     <!--FEATURES
-                                                                                                                                                                                                =========================================================================================-->
-                    <section id="features">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                =========================================================================================-->
+                    {{-- <section id="features">
 
                         <h3>Features</h3>
 
@@ -298,26 +291,15 @@
                             </li>
                         </ul>
 
-                    </section>
+                    </section> --}}
 
                     <!--VIDEO
-                                                                                                                                                                                            =============================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            =============================================================================================-->
 
-                    <section id="video">
-
-                        <h3>Video</h3>
-
-                        <div class="embed-responsive embed-responsive-16by9 rounded ts-shadow__md">
-                            <iframe src="https://player.vimeo.com/video/9799783?color=ffffff&title=0&byline=0&portrait=0"
-                                width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen
-                                allowfullscreen></iframe>
-                        </div>
-
-                    </section>
 
                     <!--AMENITIES
-                                                                                                                                                                                                =========================================================================================-->
-                    <section id="amenities">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                =========================================================================================-->
+                    {{-- <section id="amenities">
 
                         <h3>Amenities</h3>
 
@@ -332,7 +314,7 @@
                             <li>Internet</li>
                         </ul>
 
-                    </section>
+                    </section> --}}
 
                 </div>
                 <!--end col-md-8-->
@@ -344,14 +326,14 @@
     </section>
 
     <!--SIMILAR PROPERTIES
-                                                                                                                                                                            =============================================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                            =============================================================================================================-->
     <section id="similar-properties">
         <div class="container">
             <div class="row">
 
                 <div class="offset-lg-4 col-sm-12 col-lg-8">
 
-                    <hr class="mb-5">
+                    <hr class="mt-0">
 
                     <h3>Similar Properties</h3>
                     @foreach ($similar as $similars)
@@ -373,15 +355,15 @@
                             <div class="card-body">
 
                                 <figure class="ts-item__info">
-                                    <h4>Big Luxury Apartment</h4>
+                                    <h4>{{ $similars->name }}</h4>
                                     <aside>
                                         <i class="fa fa-map-marker mr-2"></i>
-                                        1350 Arbutus Drive
+                                        {{ $similars->city }}, {{ $similars->province }}
                                     </aside>
                                 </figure>
 
                                 <div class="ts-item__info-badge">
-                                    $350,000
+                                    Rp.{{ number_format($similars->price, 2) }}
                                 </div>
 
                                 <div class="ts-description-lists">
@@ -414,4 +396,53 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('script')
+    <script src="{{ asset('frontend') }}/assets/js/leaflet.js"></script>
+    <script src="{{ asset('frontend') }}/assets/js/map-leaflet.js"></script>
+    <script>
+        $(document).on('click', '.tmblpesan', function() {
+            var input_ceknama = document.getElementById('wa_nama');
+            var input_cekbongkar = document.getElementById('wa_bongkar');
+
+            /* Whatsapp Settings */
+            var walink = 'https://web.whatsapp.com/send',
+                phone = '628990466363',
+                walink2 = 'Assalamualaikum Wr Wb',
+                text_yes = 'Terkirim.',
+                text_no = 'Isi semua Formulir !';
+
+            /* Smartphone Support */
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                var walink = 'whatsapp://send';
+            }
+
+            if ("" != input_ceknama.value &&
+                input_cekbongkar.value) {
+
+                /* Call Input Form */
+                var input_name = $("#wa_nama").val(),
+                    input_bongkar = $("#wa_bongkar").val();
+
+                /* Final Whatsapp URL */
+                var blanter_whatsapp = walink + '?phone=' + phone + '&text=' + walink2 + '%0A%0A' +
+                    'Nama : ' + input_name + '%0A%0A' +
+                    '' + input_bongkar + '%0A';
+
+                /* Whatsapp Window Open */
+                window.open(blanter_whatsapp, '_blank');
+                document.getElementById("text-info").innerHTML = '<span class="yes">' + text_yes + '</span>';
+            } else {
+                document.getElementById("text-info").innerHTML = '<span class="no">' + text_no + '</span>';
+            }
+        });
+
+    </script>
+
+@endsection
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/leaflet.css">
+    <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/style.css">
 @endsection

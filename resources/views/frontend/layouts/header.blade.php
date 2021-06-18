@@ -12,7 +12,7 @@
               <div class="container">
 
                   <!--Brand Logo-->
-                  <a class="navbar-brand" href="index-map-leaflet-fullscreen.html">
+                  <a class="navbar-brand" href="{{ route('home') }}">
                       <img src="{{ asset('frontend') }}/assets/img/logo.png" alt="">
                   </a>
 

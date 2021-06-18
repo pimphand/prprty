@@ -454,7 +454,7 @@ $(document).ready(function($) {
         ( controls === 1 ) ? L.control.zoom({position: "topright"}).addTo(map) : "";
 
         var icon = L.icon({
-            iconUrl: "frontend/assets/img/marker-small.png",
+            iconUrl: "https://properti.dmptdev.com/frontend/assets/img/marker-small.png",
             iconSize: [22, 29],
             iconAnchor: [11, 29]
         });

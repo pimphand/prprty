@@ -103,7 +103,8 @@ class FrontendController extends Controller
         Property::find($id)->increment('views');
         $data = Property::find($id);
         $propertyImage = PropertyImage::where('property_id', $data->id)->get();
-        $similar = Property::where('category_id', '=', $id)->limit(3)->latest()->get();
+        $similar = Property::where('category_id', '=', $data->category_id)->limit(3)->latest()->get();
+        // dd($similar);
         return view('frontend.detail', [
             'image' => $propertyImage,
             'prop' => $data,

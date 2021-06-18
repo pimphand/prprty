@@ -11,7 +11,6 @@ class Property extends Model
     use HasFactory, SoftDeletes;
 
     protected $guarded = ['id'];
-    protected $with = ['category'];
 
     public function category()
     {
