@@ -23,7 +23,7 @@
                     @csrf
                     <section class="ts-box p-0">
                         <!--PRIMARY SEARCH INPUTS
-                                                                                                                                                                                                                                                                                                                    =========================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                =========================================================================================-->
                         <div class="form-row px-4 py-3">
 
                             <!--Keyword-->
@@ -42,7 +42,7 @@
                         <!--end form-row-->
 
                         <!--MORE OPTIONS - ADVANCED SEARCH
-                                                                                                                                                                                                                                                                                                                    =========================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                =========================================================================================-->
                         {{-- <div class="ts-bg-light px-4 py-2 border-top">
 
                         <!--More Options Button-->
@@ -281,94 +281,9 @@
         <!--end container-->
     </section>
 
-    {{-- <section class="ts-block bg-white">
-        <div class="container py-4">
-            <div class="row">
-
-                <!--Feature-->
-                <div class="col-sm-6 col-md-3">
-                    <div class="ts-feature">
-
-                        <figure class="ts-feature__icon p-2">
-                            <span class="ts-circle">
-                                <i class="fa fa-check"></i>
-                            </span>
-                            <img src="{{ asset('frontend') }}/assets/img/icon-house.png" alt="">
-                        </figure>
-
-                        <h4>Properti Dengan Harga Yang Murah</h4>
-
-                        {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
-
-    </div>
-    </div>
-
-    <!--Feature-->
-    <div class="col-sm-6 col-md-3">
-        <div class="ts-feature">
-
-            <figure class="ts-feature__icon p-2">
-                <span class="ts-circle">
-                    <i class="fa fa-check"></i>
-                </span>
-                <img src="{{ asset('frontend') }}/assets/img/icon-pin.png" alt="">
-            </figure>
-
-            <h4>Akes Dekat Dengan Semuanya</h4>
-
-            {{-- <p>In dictum ac augue et suscipit. Vivamus ac tellus ut massa</p> 
-
-        </div>
-    </div>
-
-    <!--Feature-->
-    <div class="col-sm-6 col-md-3">
-        <div class="ts-feature">
-
-            <figure class="ts-feature__icon p-2">
-                <span class="ts-circle">
-                    <i class="fa fa-check"></i>
-                </span>
-                <img src="{{ asset('frontend') }}/assets/img/icon-agent.png" alt="">
-            </figure>
-
-            <h4>Agen Lokal</h4>
-
-            {{-- <p>Vivamus ac tellus ut massa bibendum aliquam vitae ac diam. </p> 
-
-        </div>
-    </div>
-
-    <!--Feature-->
-    <div class="col-sm-6 col-md-3">
-        <div class="ts-feature">
-
-            <figure class="ts-feature__icon p-2">
-                <span class="ts-circle">
-                    <i class="fa fa-check"></i>
-                </span>
-                <img src="{{ asset('frontend') }}/assets/img/icon-calculator.png" alt="">
-            </figure>
-
-            <h4>Dekat Kuburan</h4>
-
-            {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
-
-        </div>
-    </div>
-
-    </div>
-    <!--end row-->
-    </div>
-    <!--end container-->
-    </section> --}}
-    <!--end ts-block-->
-
-    <!-- SUBSCRIBE
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            =============================================================================================================-->
 
     <!--LATEST LISTINGS
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            =============================================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        =============================================================================================================-->
     <section id="latest-listings" class="ts-block">
         <div class="container">
 
@@ -441,7 +356,7 @@
 
 
     <!--ITEM CAROUSEL
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            =============================================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        =============================================================================================================-->
     <section class="ts-block" data-bg-pattern="{{ asset('frontend') }}/assets/img/bg-pattern-dot.png">
         <!--Title-->
         <div class="ts-title text-center">
@@ -498,7 +413,7 @@
                         </div>
 
                         <!--Card Footer-->
-                        <a href="detail-01.html" class="card-footer">
+                        <a href="{{ route('details.proprety', $views->id) }}" class="card-footer">
                             <span class="ts-btn-arrow">Detail</span>
                         </a>
 
@@ -510,10 +425,6 @@
 
         </div>
     </section>
-    <!--end ts-block-->
-
-    <!--SUBMIT BANNER
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            =============================================================================================================-->
     <section id="submit-banner" class="ts-block">
         <div class="container">
 
@@ -527,36 +438,4 @@
         </div>
     </section>
 
-    <!--PARTNERS
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            =============================================================================================================-->
-    {{-- <section id="partners" class="ts-block pt-4 pb-0">
-        <div class="container">
-
-            <!--Logos-->
-            <div class="d-block d-md-flex justify-content-between align-items-center text-center ts-partners py-3">
-
-                <a href="#">
-                    <img src="{{ asset('frontend') }}/assets/img/logo-01.png" alt="">
-                </a>
-
-                <a href="#">
-                    <img src="{{ asset('frontend') }}/assets/img/logo-02.png" alt="">
-                </a>
-
-                <a href="#">
-                    <img src="{{ asset('frontend') }}/assets/img/logo-03.png" alt="">
-                </a>
-
-                <a href="#">
-                    <img src="{{ asset('frontend') }}/assets/img/logo-04.png" alt="">
-                </a>
-
-                <a href="#">
-                    <img src="{{ asset('frontend') }}/assets/img/logo-05.png" alt="">
-                </a>
-
-            </div>
-            <!--end logos-->
-        </div>
-    </section> --}}
 @endsection

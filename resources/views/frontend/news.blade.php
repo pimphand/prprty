@@ -31,7 +31,7 @@
         <div class="container">
 
             <!--AGENCIES
-                                                                                                =================================================================================================-->
+                                                                                                                        =================================================================================================-->
             <section id="agencies">
 
                 @foreach ($news as $item)
@@ -53,17 +53,17 @@
                         <div class="card-body">
 
                             <figure class="ts-item__info">
-                                <h4>Weston Porperties</h4>
+                                <h4>{{ $item->title }}</h4>
                                 <aside>
                                     <i class="fa fa-map-marker mr-2"></i>
-                                    1350 Arbutus Drive
+
                                 </aside>
                             </figure>
 
                             <div class="ts-company-info">
 
                                 <div class="ts-company-contact mb-2 mb-sm-0">
-                                    {!! $item->title !!}
+                                    {!! $item->description !!}
                                 </div>
 
                                 <div class="ts-description-lists">
@@ -87,8 +87,8 @@
             <!--end #agencies-->
 
             <!--PAGINATION
-                                                                                                =================================================================================================-->
-            <section id="pagination">
+                                                                                                                        =================================================================================================-->
+            {{-- <section id="pagination">
                 <div class="container">
 
                     <!--Pagination-->
@@ -110,7 +110,7 @@
                     </nav>
 
                 </div>
-            </section>
+            </section> --}}
 
         </div>
         <!--end container-->

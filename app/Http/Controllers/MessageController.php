@@ -98,13 +98,12 @@ class MessageController extends Controller
         //
     }
 
-    public function setStatus($id)
+    public function setStatus(Request $request, $id)
     {
-        $me = Message::find($id);
-        $me->status = 0;
-        // dd($message);
+        $me = Message::findOrFail($id);
+        $me->status = $request->status;
+        dd($me);
         $me->save;
-
         return redirect(route('dashboard'));
     }
 }

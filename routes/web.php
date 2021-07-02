@@ -38,6 +38,7 @@ Route::post('/contact', [FrontendController::class, 'sendMessage'])->name('sendM
 Route::prefix('admin')->middleware(['auth'])->group(
     function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+        Route::post('/set/{id}', [DashboardController::class, 'set'])->name('set');
         Route::post('/social', [DashboardController::class, 'store'])->name('social.store');
         Route::post('/social/{id}/destroy', [DashboardController::class, 'destroy'])->name('social.destroy');
 
@@ -48,7 +49,6 @@ Route::prefix('admin')->middleware(['auth'])->group(
         Route::resource('slider', SliderController::class);
         Route::resource('product', FeaturedProductController::class);
         Route::resource('message', MessageController::class);
-        Route::put('message/{id}/status', [MessageController::class, 'setStatus'])->name('message');
 
         Route::get('news/{id}/set-status', [NewsController::class . 'setstatus'])->name('setstatus');
     }

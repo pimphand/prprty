@@ -53,4 +53,13 @@ class DashboardController extends Controller
 
         return redirect()->back();
     }
+
+    public function set(Request $request, $id)
+    {
+        $me = Message::find($id);
+        $me->status = $request->status;
+        // dd($me);
+        $me->save;
+        return redirect(route('dashboard'));
+    }
 }

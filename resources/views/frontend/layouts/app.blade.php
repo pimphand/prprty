@@ -9,7 +9,7 @@
     <!--CSS -->
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/font-awesome/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/simplebar.css">
+    {{-- <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/simplebar.css"> --}}
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/style.css">
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/scss.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -108,7 +108,6 @@
         }
 
         popupWhatsApp();
-
     </script>
 </body>
 

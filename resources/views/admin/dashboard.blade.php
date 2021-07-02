@@ -118,13 +118,14 @@
                                                 <td>
                                                     {{ $pesan->message }}
                                                 </td>
-                                                <td> {{ $pesan->created_at }}</td>
+                                                <td> {{ \Carbon\Carbon::parse($pesan->created_at)->format('d/m/Y') }}</td>
                                                 {{-- @if ($pesan->status == 0)
                                                     <td>
-                                                        <form action="{{ route('message', $pesan->id) }}" method="post"
-                                                            enctype="multipart/form-data">
+                                                        <form action="{{ route('set', $pesan->id) }}" method="post">
                                                             @csrf
-                                                            @method('PUT')
+                                                            {{-- @method('put') 
+                                                            <input type="hidden" name="status" value="0">
+                                                            {{-- <input type="hidden" name="message" value="0"> 
                                                             <button class="btn btn-info" type="submit">Tandai Sudah
                                                                 dibaca</button>
                                                         </form>

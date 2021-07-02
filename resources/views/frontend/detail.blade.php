@@ -40,7 +40,7 @@
     </section>
 
     <!--PAGE TITLE
-                                                                                                                                                                                                                                                                                                                                                                                                                                                =========================================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                        =========================================================================================================-->
     <section id="page-title" class="border-bottom ts-white-gradient">
         <div class="container">
 
@@ -67,17 +67,17 @@
     </section>
 
     <!--CONTENT
-                                                                                                                                                                                                                                                                                                                                                                                                                                                =========================================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                        =========================================================================================================-->
     <section id="content">
         <div class="container">
             <div class="row flex-wrap-reverse">
 
                 <!--LEFT SIDE
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            =============================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    =============================================================================================-->
                 <div class="col-md-5 col-lg-4">
 
                     <!--DETAILS
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                =========================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        =========================================================================================-->
                     <section id="location">
 
                         <h3>Lokasi</h3>
@@ -98,7 +98,7 @@
                     </section>
 
                     <!--CONTACT THE AGENT
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                =========================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        =========================================================================================-->
                     <section class="contact-the-agent">
                         <h3>Kontak Agent</h3>
 
@@ -155,7 +155,7 @@
                     </section>
 
                     <!--ACTIONS
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            =============================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    =============================================================================================-->
                     <section id="actions">
 
                         <div class="d-flex justify-content-between">
@@ -188,11 +188,11 @@
                 <!--end col-md-4-->
 
                 <!--RIGHT SIDE
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            =============================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    =============================================================================================-->
                 <div class="col-md-7 col-lg-8">
 
                     <!--DESCRIPTION
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                =========================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        =========================================================================================-->
                     <section id="description">
 
                         <h3>Deskripsi</h3>
@@ -206,25 +206,25 @@
                             <dt>ID:</dt>
                             <dd class="border-bottom pb-2">#{{ $prop->code }}</dd>
 
-                            <dt>Category:</dt>
+                            <dt>Kategori:</dt>
                             <dd class="border-bottom pb-2">{{ $prop->category->name }}</dd>
 
                             <dt>Status:</dt>
                             <dd class="border-bottom pb-2">Sale</dd>
 
-                            <dt>Area:</dt>
+                            <dt>luas:</dt>
                             <dd class="border-bottom pb-2">{{ $prop->area }}<sup>2</sup></dd>
 
-                            <dt>Rooms:</dt>
+                            <dt>Ruangan:</dt>
                             <dd class="border-bottom pb-2">{{ $prop->room }} 1</dd>
 
-                            <dt>Bathrooms:</dt>
+                            <dt>Kamar Mandi:</dt>
                             <dd class="border-bottom pb-2">{{ $prop->bathrooms }}</dd>
 
-                            <dt>Bedrooms:</dt>
+                            <dt>Kamar Tidur:</dt>
                             <dd class="border-bottom pb-2">{{ $prop->bedrooms }}</dd>
 
-                            <dt>Garages:</dt>
+                            <dt>Garasi:</dt>
                             <dd class="border-bottom pb-2">{{ $prop->garages }}</dd>
 
                         </dl>
@@ -232,7 +232,7 @@
                     </section>
 
                     <!--FLOOR PLANS
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                =========================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        =========================================================================================-->
                     <section id="floor-plans">
 
                         <h3>Gambar Rumah</h3>
@@ -250,72 +250,6 @@
 
                     </section>
 
-                    <!--FEATURES
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                =========================================================================================-->
-                    {{-- <section id="features">
-
-                        <h3>Features</h3>
-
-                        <ul class="list-unstyled ts-list-icons ts-column-count-4 ts-column-count-sm-2 ts-column-count-md-2">
-                            <li>
-                                <i class="fa fa-bell"></i>
-                                Door Bell
-                            </li>
-                            <li>
-                                <i class="fa fa-wifi"></i>
-                                Wi-Fi
-                            </li>
-                            <li>
-                                <i class="fa fa-utensils"></i>
-                                Restaurant Nearby
-                            </li>
-                            <li>
-                                <i class="fa fa-plug"></i>
-                                230V Plugs
-                            </li>
-                            <li>
-                                <i class="fa fa-wheelchair"></i>
-                                Accessible
-                            </li>
-                            <li>
-                                <i class="fa fa-phone"></i>
-                                Phone
-                            </li>
-                            <li>
-                                <i class="fa fa-train"></i>
-                                Train Station
-                            </li>
-                            <li>
-                                <i class="fa fa-key"></i>
-                                Secured Key
-                            </li>
-                        </ul>
-
-                    </section> --}}
-
-                    <!--VIDEO
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            =============================================================================================-->
-
-
-                    <!--AMENITIES
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                =========================================================================================-->
-                    {{-- <section id="amenities">
-
-                        <h3>Amenities</h3>
-
-                        <ul class="ts-list-colored-bullets ts-text-color-light ts-column-count-3 ts-column-count-md-2">
-                            <li>Air Conditioning</li>
-                            <li>Swimming Pool</li>
-                            <li>Central Heating</li>
-                            <li>Laundry Room</li>
-                            <li>Gym</li>
-                            <li>Alarm</li>
-                            <li>Window Covering</li>
-                            <li>Internet</li>
-                        </ul>
-
-                    </section> --}}
-
                 </div>
                 <!--end col-md-8-->
 
@@ -326,7 +260,7 @@
     </section>
 
     <!--SIMILAR PROPERTIES
-                                                                                                                                                                                                                                                                                                                                                                                                                                            =============================================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    =============================================================================================================-->
     <section id="similar-properties">
         <div class="container">
             <div class="row">
@@ -335,7 +269,7 @@
 
                     <hr class="mt-0">
 
-                    <h3>Similar Properties</h3>
+                    <h3>Properti yang mirip</h3>
                     @foreach ($similar as $similars)
 
                         <!--Item-->
@@ -437,7 +371,6 @@
                 document.getElementById("text-info").innerHTML = '<span class="no">' + text_no + '</span>';
             }
         });
-
     </script>
 
 @endsection
