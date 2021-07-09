@@ -119,18 +119,14 @@
                                                     {{ $pesan->message }}
                                                 </td>
                                                 <td> {{ \Carbon\Carbon::parse($pesan->created_at)->format('d/m/Y') }}</td>
-                                                {{-- @if ($pesan->status == 0)
+                                                @if ($pesan->status == 0)
                                                     <td>
-                                                        <form action="{{ route('set', $pesan->id) }}" method="post">
+                                                        <form action="{{ route('baca', $pesan->id) }}" method="post">
                                                             @csrf
-                                                            {{-- @method('put') 
-                                                            <input type="hidden" name="status" value="0">
-                                                            {{-- <input type="hidden" name="message" value="0"> 
-                                                            <button class="btn btn-info" type="submit">Tandai Sudah
-                                                                dibaca</button>
+                                                            <button class="btn btn-info" type="submit">Baca</button>
                                                         </form>
                                                     </td>
-                                                @endif --}}
+                                                @endif
                                             </tr>
                                         @endforeach
 

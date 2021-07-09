@@ -23,7 +23,7 @@
                     @csrf
                     <section class="ts-box p-0">
                         <!--PRIMARY SEARCH INPUTS
-                                                                                                                                                                                                                                                                                                                                                =========================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                        =========================================================================================-->
                         <div class="form-row px-4 py-3">
 
                             <!--Keyword-->
@@ -42,7 +42,7 @@
                         <!--end form-row-->
 
                         <!--MORE OPTIONS - ADVANCED SEARCH
-                                                                                                                                                                                                                                                                                                                                                =========================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                        =========================================================================================-->
                         {{-- <div class="ts-bg-light px-4 py-2 border-top">
 
                         <!--More Options Button-->
@@ -232,7 +232,7 @@
                             </div>
 
                             <!--Card Image-->
-                            <a href="detail-01.html" class="card-img ts-item__image"
+                            <a href="{{ route('details.proprety', $feat->property->id) }}" class="card-img ts-item__image"
                                 data-bg-image="{{ asset('storage/image/' . $feat->property->image) }}">
                                 <div class="ts-item__info-badge">Rp. {{ number_format($feat->property->price, 2) }}</div>
                                 <figure class="ts-item__info">
@@ -283,7 +283,7 @@
 
 
     <!--LATEST LISTINGS
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        =============================================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                =============================================================================================================-->
     <section id="latest-listings" class="ts-block">
         <div class="container">
 
@@ -356,7 +356,7 @@
 
 
     <!--ITEM CAROUSEL
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        =============================================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                =============================================================================================================-->
     <section class="ts-block" data-bg-pattern="{{ asset('frontend') }}/assets/img/bg-pattern-dot.png">
         <!--Title-->
         <div class="ts-title text-center">

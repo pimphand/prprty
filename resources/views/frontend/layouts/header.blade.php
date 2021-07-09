@@ -38,9 +38,6 @@
                                   Home
                               </a>
                           </li>
-                          <li class="nav-item {{ request()->is('about') ? 'active' : '' }}">
-                              <a class="nav-link" href="{{ route('about') }}">Tentang Kami</a>
-                          </li>
                           <!--end HOME nav-item-->
                           <li class="nav-item {{ request()->is('propety') ? 'active' : '' }}">
                               <a class="nav-link mr-2" href="{{ route('propety') }}">Properti</a>
@@ -58,7 +55,7 @@
                           <!--PAGES (Main level)
                             
                         =============================================================================================-->
-                          <li class="nav-item {{ request()->is('berita') ? 'active' : '' }}">
+                          <li class="nav-item {{ request()->is('contact') ? 'active' : '' }}">
                               <a class="nav-link mr-2" href="{{ route('contact') }}">Kontak</a>
                           </li>
 

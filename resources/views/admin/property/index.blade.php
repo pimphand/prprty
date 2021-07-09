@@ -39,7 +39,7 @@
                                 </button>
                                 <button type="button" class="btn btn-raised btn-info" data-toggle="modal"
                                     data-target="#gambar{{ $item->id }}">
-                                    Lihat Gambar
+                                    Gambar
                                 </button>
                                 <!-- Modal -->
                                 <div class="modal fade bd-example-modal-lg" id="detail{{ $item->id }}" tabindex="-1"
@@ -429,7 +429,6 @@
             selector: '#text-editor',
             plugins: 'image imagetools'
         });
-
     </script>
 
 @endsection

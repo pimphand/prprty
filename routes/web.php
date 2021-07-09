@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\FeaturedProductController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\MessageController;
@@ -38,10 +39,6 @@ Route::post('/contact', [FrontendController::class, 'sendMessage'])->name('sendM
 Route::prefix('admin')->middleware(['auth'])->group(
     function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-        Route::post('/set/{id}', [DashboardController::class, 'set'])->name('set');
-        Route::post('/social', [DashboardController::class, 'store'])->name('social.store');
-        Route::post('/social/{id}/destroy', [DashboardController::class, 'destroy'])->name('social.destroy');
-
         Route::resource('proprety/category', PropertyCategoryController::class);
         Route::resource('proprety', PropertyController::class);
         Route::resource('image', PropertyImageController::class);
@@ -49,8 +46,9 @@ Route::prefix('admin')->middleware(['auth'])->group(
         Route::resource('slider', SliderController::class);
         Route::resource('product', FeaturedProductController::class);
         Route::resource('message', MessageController::class);
+        // Route::get('facility', FacilityController::class);
 
-        Route::get('news/{id}/set-status', [NewsController::class . 'setstatus'])->name('setstatus');
+        Route::post('message/{id}/set-status', [MessageController::class, 'setstatus'])->name('baca');
     }
 );
 

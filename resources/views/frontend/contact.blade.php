@@ -14,7 +14,7 @@
     </section>
 
     <!--PAGE TITLE
-                                                                                                                        =========================================================================================================-->
+                                                                                                                                                        =========================================================================================================-->
     <section id="page-title">
         <div class="container">
             <div class="ts-title">
@@ -24,7 +24,7 @@
     </section>
 
     <!--MAP
-                                                                                                                        =========================================================================================================-->
+                                                                                                                                                        =========================================================================================================-->
     <section id="map-address">
 
         <div class="container mb-5">
@@ -51,21 +51,21 @@
     </section>
 
     <!--CONTACT INFO & FORM
-                                                                                                                        =========================================================================================================-->
+                                                                                                                                                        =========================================================================================================-->
     <section id="contact-form">
         <div class="container">
             <div class="row">
 
                 <!--CONTACTS (LEFT SIDE)
-                                                                                                                                    =============================================================================================-->
+                                                                                                                                                                    =============================================================================================-->
                 <div class="col-md-4">
 
                     <!--Title-->
-                    <h3>Get In Touch</h3>
+                    {{-- <h3>Get In Touch</h3> --}}
 
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat tempor sapien.
-                        In lobortis posuere tincidunt.
+                        {{-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat tempor sapien.
+                        In lobortis posuere tincidunt. --}}
                     </p>
 
                     <!--Phone-->
@@ -73,7 +73,7 @@
                         <i class="fa fa-phone ts-opacity__50 mr-3 mb-0 h4 font-weight-bold"></i>
                         <dl class="mb-0">
                             <dt>Phone</dt>
-                            <dd class="ts-opacity__50">+1 321-978-5552</dd>
+                            <dd class="ts-opacity__50">+62 899-0466-363</dd>
                         </dl>
                     </figure>
 
@@ -89,7 +89,7 @@
                     </figure>
 
                     <!--Skype-->
-                    <figure class="ts-center__vertical">
+                    {{-- <figure class="ts-center__vertical">
                         <i class="fab fa-skype ts-opacity__50 mr-3 mb-0 h4 font-weight-bold"></i>
                         <dl class="mb-0">
                             <dt>Skype</dt>
@@ -97,13 +97,11 @@
                                 <a href="#">real.estate.agency</a>
                             </dd>
                         </dl>
-                    </figure>
-
+                    </figure> --}}
                 </div>
                 <!--end col-md-4-->
-
                 <!--FORM (RIGHT SIDE)
-                                                                                                                                    =============================================================================================-->
+                                                                                                                                                                    =============================================================================================-->
                 <div class="col-md-8">
 
                     <!--Title-->

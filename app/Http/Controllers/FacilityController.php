@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Facility;
+use App\Models\Property;
 use Illuminate\Http\Request;
 
 class FacilityController extends Controller
@@ -12,9 +13,12 @@ class FacilityController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+        $data = Property::find($id);
+        return view('admin.property.facility.index', [
+            'data' => $data
+        ]);
     }
 
     /**
@@ -35,7 +39,15 @@ class FacilityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        foreach ($request->name as $item => $value) {
+            $data = array(
+                'property_id' => $request->property_id[$item],
+                'name' => $request->name[$item],
+            );
+            Facility::create($data);
+        }
+
+        return redirect()->back();
     }
 
     /**
@@ -67,9 +79,8 @@ class FacilityController extends Controller
      * @param  \App\Models\Facility  $facility
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Facility $facility)
+    public function update(Request $request)
     {
-        //
     }
 
     /**

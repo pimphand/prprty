@@ -40,7 +40,7 @@
     </section>
 
     <!--PAGE TITLE
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        =========================================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    =========================================================================================================-->
     <section id="page-title" class="border-bottom ts-white-gradient">
         <div class="container">
 
@@ -67,17 +67,17 @@
     </section>
 
     <!--CONTENT
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        =========================================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    =========================================================================================================-->
     <section id="content">
         <div class="container">
             <div class="row flex-wrap-reverse">
 
                 <!--LEFT SIDE
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    =============================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                =============================================================================================-->
                 <div class="col-md-5 col-lg-4">
 
                     <!--DETAILS
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        =========================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    =========================================================================================-->
                     <section id="location">
 
                         <h3>Lokasi</h3>
@@ -87,7 +87,8 @@
                                 data-ts-map-leaflet-provider="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png"
                                 data-ts-map-zoom="12" data-ts-map-center-latitude="{{ $prop->langi }}"
                                 data-ts-map-center-longitude="{{ $prop->longi }}" data-ts-map-scroll-wheel="1"
-                                data-ts-map-controls="0"></div>
+                                data-ts-map-controls="0">
+                            </div>
                             <div class="p-3 ts-text-color-light">
                                 <a href="{{ $prop->maps }}"><i class="fa fa-map-marker mr-2"></i>
                                     {{ $prop->city }}, {{ $prop->province }}
@@ -98,9 +99,9 @@
                     </section>
 
                     <!--CONTACT THE AGENT
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        =========================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    =========================================================================================-->
                     <section class="contact-the-agent">
-                        <h3>Kontak Agent</h3>
+                        <h3>Whatsapp langsung ke admin</h3>
 
                         <div class="ts-box">
 
@@ -108,8 +109,8 @@
                             <div class="ts-center__vertical mb-4">
 
                                 <!--Image-->
-                                <a href="agent-detail-01.html" class="ts-circle p-5 mr-4 ts-shadow__sm"
-                                    data-bg-image="{{ asset('frontend') }}/assets/img/img-person-05.jpg"></a>
+                                {{-- <a href="agent-detail-01.html" class="ts-circle p-5 mr-4 ts-shadow__sm"
+                                    data-bg-image="{{ asset('frontend') }}/assets/img/img-person-05.jpg"></a> --}}
 
                                 <!--Phone contact-->
                                 <figure class="mb-0">
@@ -155,8 +156,8 @@
                     </section>
 
                     <!--ACTIONS
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    =============================================================================================-->
-                    <section id="actions">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                =============================================================================================-->
+                    {{-- <section id="actions">
 
                         <div class="d-flex justify-content-between">
 
@@ -182,17 +183,17 @@
 
                         </div>
 
-                    </section>
+                    </section> --}}
 
                 </div>
                 <!--end col-md-4-->
 
                 <!--RIGHT SIDE
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    =============================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                =============================================================================================-->
                 <div class="col-md-7 col-lg-8">
 
                     <!--DESCRIPTION
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        =========================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    =========================================================================================-->
                     <section id="description">
 
                         <h3>Deskripsi</h3>
@@ -210,7 +211,7 @@
                             <dd class="border-bottom pb-2">{{ $prop->category->name }}</dd>
 
                             <dt>Status:</dt>
-                            <dd class="border-bottom pb-2">Sale</dd>
+                            <dd class="border-bottom pb-2">{{ $prop->status }}</dd>
 
                             <dt>luas:</dt>
                             <dd class="border-bottom pb-2">{{ $prop->area }}<sup>2</sup></dd>
@@ -232,7 +233,7 @@
                     </section>
 
                     <!--FLOOR PLANS
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        =========================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    =========================================================================================-->
                     <section id="floor-plans">
 
                         <h3>Gambar Rumah</h3>
@@ -260,7 +261,7 @@
     </section>
 
     <!--SIMILAR PROPERTIES
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    =============================================================================================================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                =============================================================================================================-->
     <section id="similar-properties">
         <div class="container">
             <div class="row">

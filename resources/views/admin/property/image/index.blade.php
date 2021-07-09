@@ -27,13 +27,9 @@
                                 <h6 class="header-title">Propreti: {{ $item->name }}</h6>
                                 <a href="{{ route('image.edit', ['image' => $item->id]) }}">
                                     <button type="button" class="btn btn-raised btn-primary">
-                                        Details
+                                        Tambah Foto
                                     </button>
                                 </a>
-                                <button type="button" class="btn btn-raised btn-danger" data-toggle="modal"
-                                    data-target="#delete{{ $item->id }}">
-                                    Hapus
-                                </button>
                                 <!-- Modal -->
                                 @foreach ($gambar as $items)
                                     <div class="modal fade bd-example-modal-lg" id="detail{{ $items->property->id }}"
@@ -131,7 +127,6 @@
             selector: '#text-editor',
             plugins: 'image imagetools'
         });
-
     </script>
 
 @endsection

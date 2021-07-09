@@ -24,7 +24,7 @@
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                            <h5 class="modal-title" id="exampleModalLongTitle">Tambah Kategori</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
@@ -59,7 +59,7 @@
             <div class="row">
                 @if (count($kategori) == 0)
                     <div class="col" style="text-align: center">
-                        <h6>Tidak ada foto slider..</h6>
+                        <h6>Tidak ada foto</h6>
                     </div>
                 @endif
                 @foreach ($kategori as $item)

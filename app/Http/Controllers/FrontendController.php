@@ -16,25 +16,6 @@ class FrontendController extends Controller
 {
     public function index()
     {
-        $endpoint = 'live';
-        $access_key = '92ab1bae7abc2b560a41fe99cc628447';
-
-        // Initialize CURL:
-        $ch = curl_init('http://api.currencylayer.com/' . $endpoint . '?access_key=' . $access_key . '');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-        // Store the data:
-        $json = curl_exec($ch);
-        curl_close($ch);
-
-        // Decode JSON response:
-        $exchangeRates = json_decode($json, true);
-        // dd($exchangeRates);
-        $services = $exchangeRates['quotes']['USDIDR'];
-        // Access the exchange rate values, e.g. GBP:
-        // echo $exchangeRates['quotes'][''];
-        $data = $services * 1;
-
 
         $prop = Property::latest()->get();
         $p = Property::orderBy('views', 'DESC')->limit(10)->get();
@@ -78,13 +59,14 @@ class FrontendController extends Controller
         $postsInRange = Property::where('name', 'like', '%' . $request->name . '%')
             ->Orwhere('city', 'like', '%' . $request->name . '%')
             ->Orwhere('province', 'like', '%' . $request->name . '%')
-            ->Orwhere('price', '<=' . $request->price)
-            // ->Orwhere('status', '=' . $request->status)
-            ->get();
+            // ->Orwhere('price', '<=' . $request->price)
+            ->Orwhere('status', 'like', '%' . $request->name . '%')
+            ->paginate(12);
+        // ->get();
 
         // dd($postsInRang1, $postsInRange);
-        return view('frontend.cari', [
-            'data' => $postsInRange,
+        return view('frontend.product', [
+            'prop' => $postsInRange,
             // 'data' => $postsInRang1,
             'category' => $category,
         ]);
